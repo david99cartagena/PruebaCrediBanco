@@ -2,7 +2,7 @@
 # (Obligatorio) usar  
 > git clone https://github.com/david99cartagena/PruebaCrediBanco.git
 
-Instalar dependencias angular
+(Obligatorio) Instalar dependecias
 ```sh
 npm install
 ```
@@ -25,10 +25,6 @@ ng version
 (Opcional) Instalar angular
 ```sh
 npm install @angular/cli
-```
-(Obligatorio) Instalar dependecias
-```sh
-npm install
 ```
 (Obligatorio) Iniciar proyecto o ejecutarlo con un navegador predeterminado
 ```sh
