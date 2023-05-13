@@ -77,18 +77,19 @@ body {
   max-width: 100%;
   margin-bottom: 0.5rem;
 
-  > caption + thead,
-  > colgroup + thead,
-  > thead:first-child {
-    > tr:first-child {
-      > th,
-      > td {
+  /* > caption + thead, */
+  /* >colgroup+thead, */
+  >thead:first-child {
+    >tr:first-child {
+
+      >th,
+      >td {
         border-top: 0;
       }
     }
   }
 
-  > tbody + tbody {
+  >tbody+tbody {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
   }
 
@@ -100,20 +101,22 @@ body {
 .table-bordered {
   border: 0;
 
-  > thead,
-  > tbody,
-  > tfoot {
-    > tr {
-      > th,
-      > td {
+  >thead,
+  >tbody,
+  >tfoot {
+    >tr {
+
+      >th,
+      >td {
         border: 0;
       }
     }
   }
 
-  > thead > tr {
-    > th,
-    > td {
+  >thead>tr {
+
+    >th,
+    >td {
       border-bottom-width: 2px;
     }
   }
@@ -121,33 +124,34 @@ body {
 
 .table-responsive-vertical {
   @media screen and (max-width: 768px) {
-    // Tighten up spacing
-    > .table {
+
+    /* Tighten up spacing */
+    >.table {
       margin-bottom: 0;
       background-color: transparent;
 
-      > thead,
-      > tfoot {
+      >thead,
+      >tfoot {
         display: none;
       }
 
-      > tbody {
+      >tbody {
         display: block;
 
-        > tr {
+        >tr {
           display: block;
           border: 1px solid @table-border-color;
           border-radius: 2px;
           margin-bottom: @table-cell-padding;
 
-          > td {
+          >td {
             background-color: @table-bg;
             display: block;
             vertical-align: middle;
             text-align: right;
           }
 
-          > td[data-title]:before {
+          >td[data-title]:before {
             content: attr(data-title);
             float: left;
             font-size: inherit;
@@ -158,46 +162,48 @@ body {
       }
     }
 
-    // Special overrides for the bordered tables
-    > .table-bordered {
+    /* Special overrides for the bordered tables */
+    >.table-bordered {
       border: 0;
 
-      // Nuke the appropriate borders so that the parent can handle them
-      > tbody {
-        > tr {
-          > td {
+      /* Nuke the appropriate borders so that the parent can handle them */
+      >tbody {
+        >tr {
+          >td {
             border: 0;
             border-bottom: 1px solid @table-border-color;
           }
 
-          > td:last-child {
+          >td:last-child {
             border-bottom: 0;
           }
         }
       }
     }
 
-    // Special overrides for the striped tables
-    > .table-striped {
-      > tbody > tr > td,
-      > tbody > tr:nth-child(odd) {
+    /* Special overrides for the striped tables */
+    >.table-striped {
+
+      >tbody>tr>td,
+      >tbody>tr:nth-child(odd) {
         background-color: @table-bg;
       }
 
-      > tbody > tr > td:nth-child(odd) {
+      >tbody>tr>td:nth-child(odd) {
         background-color: @table-bg-accent;
       }
     }
 
-    // Special overrides for hover tables
-    > .table-hover {
-      > tbody {
-        > tr:hover > td,
-        > tr:hover {
+    /* Special overrides for hover tables */
+    >.table-hover {
+      >tbody {
+
+        >tr:hover>td,
+        >tr:hover {
           background-color: @table-bg;
         }
 
-        > tr > td:hover {
+        >tr>td:hover {
           background-color: @table-bg-hover;
         }
       }

@@ -19,7 +19,7 @@ export class ProductsService {
 
   // revisar
   public buscarProduct(termino: string){
-    let buscarProductArr: product[] = [];
+    //let buscarProductArr: product[] = [];
     // termino = termino.toLowerCase();
 
     // for (let i = 0; i < this.product.length; i++) {
