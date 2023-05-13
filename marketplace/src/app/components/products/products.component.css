@@ -77,8 +77,8 @@ body {
   max-width: 100%;
   margin-bottom: 0.5rem;
 
-  > caption + thead,
-  > colgroup + thead,
+  /* > caption + thead, */
+  /* >colgroup+thead, */
   > thead:first-child {
     > tr:first-child {
       > th,
@@ -121,7 +121,7 @@ body {
 
 .table-responsive-vertical {
   @media screen and (max-width: 768px) {
-    // Tighten up spacing
+    /* Tighten up spacing */
     > .table {
       margin-bottom: 0;
       background-color: transparent;
@@ -158,11 +158,11 @@ body {
       }
     }
 
-    // Special overrides for the bordered tables
+    /* Special overrides for the bordered tables */
     > .table-bordered {
       border: 0;
 
-      // Nuke the appropriate borders so that the parent can handle them
+      /* Nuke the appropriate borders so that the parent can handle them */
       > tbody {
         > tr {
           > td {
@@ -177,7 +177,7 @@ body {
       }
     }
 
-    // Special overrides for the striped tables
+    /* Special overrides for the striped tables */
     > .table-striped {
       > tbody > tr > td,
       > tbody > tr:nth-child(odd) {
@@ -189,7 +189,7 @@ body {
       }
     }
 
-    // Special overrides for hover tables
+    /* Special overrides for hover tables */
     > .table-hover {
       > tbody {
         > tr:hover > td,
