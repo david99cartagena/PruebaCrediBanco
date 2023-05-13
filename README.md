@@ -1,6 +1,6 @@
 # Prueba Frontend CrediBanco
-# usar 
-> git clone
+# (Obligatorio) usar  
+> git clone https://github.com/david99cartagena/PruebaCrediBanco.git
 
 Instalar dependencias angular
 ```sh
@@ -22,19 +22,19 @@ node -v o node –version
 ```sh
 ng version
 ```
-Instalar angular
+(Opcional) Instalar angular
 ```sh
 npm install @angular/cli
 ```
-Instalar dependecias
+(Obligatorio) Instalar dependecias
 ```sh
 npm install
 ```
-Iniciar proyecto o ejecutarlo con un navegador predeterminado
+(Obligatorio) Iniciar proyecto o ejecutarlo con un navegador predeterminado
 ```sh
 ng serve -open or ng s -o
 ```
-Iniciar proyecto con x puerto
+(Opcional) Iniciar proyecto con x puerto
 ```sh
 ng serve -o --port=4300
 ```
