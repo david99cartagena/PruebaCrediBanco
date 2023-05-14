@@ -1,4 +1,5 @@
 # Prueba Frontend CrediBanco
+
 # (Obligatorio) usar  
 > git clone https://github.com/david99cartagena/PruebaCrediBanco.git
 
@@ -38,3 +39,9 @@ Generar Artefactos o Componentes de una App Angular
 ```sh
 ng generate component mi-componente
 ```
+
+## Subir sitio web o aplicacion via Github Pages 🌎
+
+> https://www.youtube.com/watch?v=c5YVvdZ0-a0
+
+> https://www.youtube.com/watch?v=sLTNgxxSBR4
