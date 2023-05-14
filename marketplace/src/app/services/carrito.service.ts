@@ -13,6 +13,7 @@ export class CarritotService {
 
   constructor() {}
 
+  /* These are methods of a service called `CarritotService`. */
   getProducts() {
     return this.productList.asObservable();
   }

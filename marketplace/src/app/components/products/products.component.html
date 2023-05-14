@@ -1,5 +1,5 @@
 <!-- <div class="p-5 table-responsive"> -->
-    <!-- <table class="table table-striped table-bordered table-hover" *ngFor="let product of data">
+<!-- <table class="table table-striped table-bordered table-hover" *ngFor="let product of data">
     <thead>
       <tr>
         <th scope="col" center>id</th>
@@ -24,7 +24,7 @@
       </tr>
     </tbody>
   </table> -->
-    <!-- <table class="table table-striped table-bordered table-hover" *ngFor="let product of data">
+<!-- <table class="table table-striped table-bordered table-hover" *ngFor="let product of data">
         <thead>
         <tr>
             <th center>id</th>
@@ -50,40 +50,9 @@
   </table> -->
 <!-- </div> -->
 
-
-<!-- <h2>Responsive Table with Foundation</h2> -->
-<!-- <div class="row" >
-  <div class="small-12 column" *ngFor="let product of data">
-    <table class="responsive" width="500" border="1">      
-      <thead align="center">
-        <tr>
-            <th scope="col">id</th>
-            <th scope="col">title</th>
-            <th scope="col">price</th>
-            <th scope="col">description</th>
-            <th scope="col">category</th>
-            <th scope="col">images</th>
-        </tr>
-        </thead>
-        <tbody align="center">
-        <tr>
-            <td>{{ product.id }}</td>
-            <td>{{ product.title }}</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.category }}</td>
-            <td>{{ product.image }}s</td>
-        </tr>
-        </tbody>
-    </table>
-  </div>
-</div> -->
-<!-- <p class="p">Demo by George Martsoukos. <a href="http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions" target="_blank">See article</a>.</p> -->
-<!-- <div class="container"> -->
-  <div id="demo">
-    
-    <!-- Responsive table starts here -->
-    <!-- <div class="table-responsive-vertical shadow-z-1" *ngFor="let product of data">
+<div id="demo">
+  <!-- Responsive table starts here -->
+  <!-- <div class="table-responsive-vertical shadow-z-1" *ngFor="let product of data">
     <table id="table" class="table table-hover table-mc-light-blue" border="1">
         <thead >
           <tr>
@@ -103,26 +72,41 @@
       </table>
     </div>
   </div> -->
-<!-- </div> -->
-<h1>Lista de Productos</h1>
-
-<div class="container">
-  <div class="row">
-      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-          <!-- <div class="card col-md-3">
-              <img src="{{item.images}}" alt="">
-              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-              <p><strong>Price:</strong> ${{item.price}}</p>
-              <button class="btn btn-primary" (click)=addtoCarrito(item)>Add to cart</button>
-          </div> -->
-          <div class="gallery">
-              <img src="{{item.images}}" width="400" height="250">
-              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
-              <p class="desc" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
-              <p><strong>Price:</strong> ${{item.price}}</p>
-              <button class="btn btn-primary" (click)=addtoCarrito(item)>Add to cart</button>
-          </div>
+  
+  <h1>Lista de Productos</h1>
+  <div class="slider">
+    <div class="slide-track">
+      <div class="slide" *ngFor="let item of filterCategory">
+        <img class="imagen-poster" [src]="item.images" height="100" width="150" />
+        <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" /> -->
+      </div>
+    </div>
+  </div>
+  <!-- Categories -->
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Lista de Categorias</h1>
+      <ng-container *ngFor="let item of categoryList">        
+        <div class="gallery">
+          <img src="{{ item.image }}" width="200" height="150" />
+          <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.name }}</h5>
+        </div>
       </ng-container>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">  
+  <div class="row">
+    <h1>Nuestros Productos</h1>
+    <ng-container *ngFor="let item of filterCategory | filter : searchKey : 'title'">
+      <div class="gallery">
+        <img src="{{ item.images }}" width="400" height="250" />
+        <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.title }}</h5>
+        <p class="desc" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.description }}</p>
+        <p><strong>Price:</strong> ${{ item.price }}</p>
+        <button class="btn btn-primary" (click)="addtoCarrito(item)">Add to cart</button>
+      </div>
+    </ng-container>
   </div>
 </div>

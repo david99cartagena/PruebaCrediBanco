@@ -11,6 +11,7 @@ import { CarritotService } from 'src/app/services/carrito.service';
 export class ProductsComponent implements OnInit {
 
   public productList: any;
+  public categoryList: any;
   public filterCategory: any;
   searchKey:string ="";
   constructor(private api: ApiService,
@@ -29,6 +30,11 @@ export class ProductsComponent implements OnInit {
         Object.assign(a, { quantity: 1, total: a.price });
       });
       console.log(this.productList);
+    });
+    
+    this.api.getCategory().subscribe((res) => {
+      this.categoryList = res;
+      console.log(this.categoryList);
     });
 
     this.carritotService.search.subscribe((val: any) => {

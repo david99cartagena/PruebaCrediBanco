@@ -17,5 +17,13 @@ export class ApiService {
       })
     );
   }
+
+  getCategory() {
+    return this.http.get<any>('https://api.escuelajs.co/api/v1/categories')
+    .pipe(map((res: any) => {
+        return res;
+      })
+    );
+  }
   
 }

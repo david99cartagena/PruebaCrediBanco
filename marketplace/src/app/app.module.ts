@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// Rutas
+// Routes
 import { AppRoutingModule } from './app-routing.module';
 
-// Servicios
+// Services
 // import { ApiService } from './services/api.service';
 // import { CarritotService } from './services/carrito.service';
 
-// Componentes
+// Components
 import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,7 +22,7 @@ import { FilterPipe } from './shared/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-
+    
     NavbarComponent,
     CarritoComponent,
     ProductsComponent,
