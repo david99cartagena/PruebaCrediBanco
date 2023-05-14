@@ -6,6 +6,7 @@ import { CarritotService } from 'src/app/services/carrito.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
+
 export class NavbarComponent implements OnInit{
   
   public totalItem : number = 0;
@@ -18,9 +19,11 @@ export class NavbarComponent implements OnInit{
       this.totalItem = res.length;
     })
   }
+
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);
     this.carritotService.search.next(this.searchTerm);
   }
+  
 }

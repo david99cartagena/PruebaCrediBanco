@@ -7,6 +7,7 @@ import { CarritotService } from 'src/app/services/carrito.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
+
 export class ProductsComponent implements OnInit {
 
   public productList: any;
@@ -14,6 +15,11 @@ export class ProductsComponent implements OnInit {
   searchKey:string ="";
   constructor(private api: ApiService,
     private carritotService: CarritotService) { }
+
+  /**
+   * The ngOnInit function initializes the component by subscribing to the getProduct API and setting
+   * up a search key for the carritotService.
+   */
 
   ngOnInit(): void {
     this.api.getProduct().subscribe((res) => {
@@ -33,6 +39,12 @@ export class ProductsComponent implements OnInit {
   addtoCarrito(item: any) {
     this.carritotService.addtoCarrito(item);
   }
+  
+  /**
+   * This function filters a list of products based on a given category.
+   * @param {string} category - string - This is the category by which the products will be filtered.
+   * It can be an empty string if no category is selected.
+   */
   filter(category: string) {
     this.filterCategory = this.productList.filter((a: any) => {
       if (a.category == category || category == '') {

@@ -6,6 +6,7 @@ import { CarritotService } from 'src/app/services/carrito.service';
   templateUrl: './carrito.component.html',
   styleUrls: ['./carrito.component.css']
 })
+
 export class CarritoComponent implements OnInit {
 
   public products : any = [];
@@ -19,10 +20,13 @@ export class CarritoComponent implements OnInit {
       this.grandTotal = this.carritoService.getTotalPrice();
     })
   }
+
   removeItem(item: any){
     this.carritoService.removeCarritotItem(item);
   }
+
   emptycart(){
     this.carritoService.removeAllCarrito();
   }
+  
 }

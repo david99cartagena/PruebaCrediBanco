@@ -26,16 +26,17 @@ import { FilterPipe } from './shared/filter.pipe';
     NavbarComponent,
     CarritoComponent,
     ProductsComponent,
-    FilterPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+
+export class AppModule { }
