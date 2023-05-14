@@ -79,11 +79,11 @@
   </div>
 </div> -->
 <!-- <p class="p">Demo by George Martsoukos. <a href="http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions" target="_blank">See article</a>.</p> -->
-<div class="container">
+<!-- <div class="container"> -->
   <div id="demo">
-    <h1>Lista de Productos</h1>
+    
     <!-- Responsive table starts here -->
-    <div class="table-responsive-vertical shadow-z-1" *ngFor="let product of data">
+    <!-- <div class="table-responsive-vertical shadow-z-1" *ngFor="let product of data">
     <table id="table" class="table table-hover table-mc-light-blue" border="1">
         <thead >
           <tr>
@@ -102,7 +102,27 @@
         </tbody>
       </table>
     </div>
+  </div> -->
+<!-- </div> -->
+<h1>Lista de Productos</h1>
+
+<div class="container">
+  <div class="row">
+      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+          <!-- <div class="card col-md-3">
+              <img src="{{item.images}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <button class="btn btn-primary" (click)=addtoCarrito(item)>Add to cart</button>
+          </div> -->
+          <div class="gallery">
+              <img src="{{item.images}}" width="400" height="250">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+              <p class="desc" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.price}}</p>
+              <button class="btn btn-primary" (click)=addtoCarrito(item)>Add to cart</button>
+          </div>
+      </ng-container>
   </div>
 </div>
-  
-<p>products works!</p>

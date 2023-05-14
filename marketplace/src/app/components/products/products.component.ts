@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
+import { ApiService } from 'src/app/services/api.service';
+import { CarritotService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-products',
@@ -7,17 +8,37 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
-  data: any[] = [];
 
-  constructor(private ProductsService: ProductsService) {}
+  public productList: any;
+  public filterCategory: any;
+  searchKey:string ="";
+  constructor(private api: ApiService,
+    private carritotService: CarritotService) { }
+
   ngOnInit(): void {
-    this.llenarData();
-  }
+    this.api.getProduct().subscribe((res) => {
+      this.productList = res;
+      this.filterCategory = res;
+      this.productList.forEach((a: any) => {
+        Object.assign(a, { quantity: 1, total: a.price });
+      });
+      console.log(this.productList);
+    });
 
-  llenarData() {
-    this.ProductsService.getProducts().subscribe((data) => {
-      this.data = data;
-      console.log(this.data);
+    this.carritotService.search.subscribe((val: any) => {
+      this.searchKey = val;
     });
   }
+
+  addtoCarrito(item: any) {
+    this.carritotService.addtoCarrito(item);
+  }
+  filter(category: string) {
+    this.filterCategory = this.productList.filter((a: any) => {
+      if (a.category == category || category == '') {
+        return a;
+      }
+    });
+  }
+
 }

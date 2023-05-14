@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { CarritotService } from 'src/app/services/carrito.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +7,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit{
-  constructor( private router:Router ) { }
+  
+  public totalItem : number = 0;
+  public searchTerm !: string;
+  constructor(private carritotService : CarritotService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.carritotService.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
   }
-
-  buscarProduct( termino:string ){
-    this.router.navigate( ['/buscar',termino] );
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.carritotService.search.next(this.searchTerm);
   }
 }

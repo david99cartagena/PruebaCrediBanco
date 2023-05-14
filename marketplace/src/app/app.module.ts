@@ -1,37 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Rutas
-import { APP_ROUTING } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 
 // Servicios
-import { ProductsService } from './services/products.service';
+// import { ApiService } from './services/api.service';
+// import { CarritotService } from './services/carrito.service';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProductsComponent } from './components/products/products.component';
-import { ProductComponent } from './components/product/product.component';
-import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
-import { BuscadorComponent } from './components/buscador/buscador.component';
+import { ProductsComponent } from './components/products/products.component';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+
     NavbarComponent,
-    ProductsComponent,
-    ProductComponent,
-    CarruselComponent,
     CarritoComponent,
-    BuscadorComponent,
+    ProductsComponent,
+    FilterPipe,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, APP_ROUTING],
-  providers: [ProductsService],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
