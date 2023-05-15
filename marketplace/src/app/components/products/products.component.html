@@ -63,7 +63,7 @@
   <div class="container-fluid">
     <div class="row">
       <h1>Lista de Categorias</h1>
-      <ng-container *ngFor="let item of categoryList">        
+      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">        
         <div class="gallery">
           <img src="{{ item.image }}" width="200" height="150" />
           <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.name }}</h5>
@@ -76,7 +76,7 @@
 <div class="container-fluid">  
   <div class="row">
     <h1>Nuestros Productos</h1>
-    <ng-container *ngFor="let item of filterCategory | filter : searchKey : 'title'">
+    <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
       <div class="gallery">
         <img src="{{ item.images }}" width="400" height="250" />
         <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.title }}</h5>
