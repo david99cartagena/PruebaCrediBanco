@@ -54,7 +54,7 @@
   <h1>Lista de Productos</h1>
   <div class="slider">
     <div class="slide-track">
-      <div class="slide" *ngFor="let item of filterCategory">
+      <div class="slide" *ngFor="let item of productList">
         <img class="imagen-poster" [src]="item.images" height="100" width="150" />
       </div>
     </div>
@@ -63,7 +63,7 @@
   <div class="container-fluid">
     <div class="row">
       <h1>Lista de Categorias</h1>
-      <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">        
+      <ng-container *ngFor="let item of categoryList">        
         <div class="gallery">
           <img src="{{ item.image }}" width="200" height="150" />
           <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{ item.name }}</h5>
