@@ -1,89 +1,46 @@
 <div id="demo">
-    <div class="container">
-        <div class="row">
-            <ng-container *ngIf="products.length != 0">
-                <table *ngFor="let item of products; let i = index">
-                    <tr>
-                        <th class="un_first">Id</th>
-                        <th class="un_first">Product Name</th>
-                        <th class="un_first">Product Image</th>
-                        <th class="un_first">Description</th>
-                        <th class="un_first">Price</th>
-                        <th class="un_first">Quantity</th>
-                        <th class="un_first">Total</th>
-                        <th class="un_first">Action</th>
-                    </tr>
-                    <tr>
-                        <td>{{ i + 1 }}</td>
-                        <td>{{ item.title }}</td>
-                        <td><img width="130" height="140" src="{{ item.images }}" /></td>
-                        <td style="width: 20%">{{ item.description }}</td>
-                        <th style="width: 12%">{{ item.price }}</th>
-                        <td style="width: 12%">{{ item.quantity }}</td>
-                        <td style="width: 12%">{{ item.total }}</td>
-                        <td>
-                            <button (click)="removeItem(item)">
-                                <i class="fas fa-trash-alt"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="4"></td>
-                        <td><button (click)="emptycart()">Empty Cart</button></td>
-                        <td><button routerLink="/products">Shop More</button></td>
-                        <td><button>Checkout</button></td>
-                        <td><strong>Total : ${{ grandTotal }}</strong></td>
-                    </tr>
-                </table> 
-                <!-- <table class="table table-responsive" *ngFor="let item of products; let i = index">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Product Name</th>
-                                        <th>Product Image</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{i+1}}</td>
-                                        <td>{{item.title}}</td>
-                                        <td><img style="width: 110px;" src="{{item.images}}" alt=""></td>
-                                        <td style="width: 25%;">{{item.description}}</td>
-                                        <th style="width: 12%;">{{item.price}}</th>
-                                        <td style="width: 12%;">{{item.quantity}}</td>
-                                        <td style="width: 12%;">{{item.total}}</td>
-                                        <td>
-                                            <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4"></td>
-                                        <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
-                                        <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
-                                        <td><button class="btn btn-success">Checkout</button></td>
-                                        <td><strong>Grand Total : ${{grandTotal}}</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table> -->
-            </ng-container>
-        </div>
-    </div>
+  <ng-container *ngIf="products.length != 0">
+    <table *ngFor="let item of products; let i = index">
+      <tr>
+        <th class="un_first">Id</th>
+        <th class="un_first">Product Name</th>
+        <th class="un_first">Product Image</th>
+        <th class="un_first">Description</th>
+        <th class="un_first">Price</th>
+        <th class="un_first">Quantity</th>
+        <th class="un_first">Total</th>
+        <th class="un_first">Action</th>
+      </tr>
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.title }}</td>
+        <td><img width="130" height="140" src="{{ item.images }}" /></td>
+        <td style="width: 20%">{{ item.description }}</td>
+        <th style="width: 12%">{{ item.price }}</th>
+        <td style="width: 12%">{{ item.quantity }}</td>
+        <td style="width: 12%">{{ item.total }}</td>
+        <td><button (click)="removeItem(item)"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>
+      <tr>
+        <td colspan="4"></td>
+        <td><button (click)="emptycart()">Empty Cart</button></td>
+        <td><button routerLink="/products">Shop More</button></td>
+        <td><button type="button" (click)="fileDownload()">Descarga</button></td>
+        <td><strong>Total : ${{ grandTotal }}</strong></td>
+      </tr>
+    </table>
+  </ng-container>
 </div>
 
 <ng-container *ngIf="products.length == 0">
-    <h5 class="card-title">My Cart</h5>
-    <div class="center">
-        <i class="bi bi-cart"></i>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-        </svg>        
-        <h4>Your cart is empty!</h4>
-        <h6>Add item to it now</h6>
-        <button routerLink="/products" class="btn btn-primary">Shop Now</button>
-    </div>
+  <h5 class="card-title">My Cart</h5>
+  <div class="center">
+    <i class="bi bi-cart"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    </svg>
+    <h4>Your cart is empty!</h4>
+    <h6>Add item to it now</h6>
+    <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+  </div>
 </ng-container>

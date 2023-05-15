@@ -19,6 +19,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { ProductsComponent } from './components/products/products.component';
 import { FilterPipe } from './shared/filter.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
