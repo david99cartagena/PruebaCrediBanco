@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && cp src/_redirects dist/marketplace/_redirects",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
