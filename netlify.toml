@@ -2,9 +2,6 @@
   command = "ng build --configuration=production"
   publish = "dist/marketplace"
 
-[build.environment]
-  NODE_VERSION = "18"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
