@@ -1,5 +1,4 @@
 [build]
-  base = "marketplace"
   command = "ng build --configuration=production"
   publish = "dist/marketplace"
 
