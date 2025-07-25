@@ -1,6 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = "dist/marketplace"
+  command = "ng build --configuration=production"
+  publish = "dist/spoti-app"
 
-[build.environment]
-  NODE_VERSION = "18"
+  [build.environment]
+    NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
